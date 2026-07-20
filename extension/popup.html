@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cookie Transfer</title>
+<style>
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    width: 320px;
+    padding: 14px;
+    color: #1f2328;
+  }
+  h1 {
+    font-size: 15px;
+    margin: 0 0 10px;
+  }
+  .site {
+    font-size: 12px;
+    color: #57606a;
+    word-break: break-all;
+    margin-bottom: 12px;
+  }
+  button {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    background: #f6f8fa;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  button:hover { background: #eef1f4; }
+  button.primary { background: #1f6feb; color: #fff; border-color: #1f6feb; }
+  button.primary:hover { background: #1a5fd0; }
+  hr { border: none; border-top: 1px solid #eee; margin: 12px 0; }
+  #status {
+    font-size: 12px;
+    margin-top: 8px;
+    min-height: 16px;
+    color: #57606a;
+  }
+  #status.error { color: #cf222e; }
+  #status.ok { color: #1a7f37; }
+  .warn {
+    font-size: 11px;
+    color: #9a6700;
+    background: #fff8c5;
+    padding: 6px 8px;
+    border-radius: 6px;
+    margin-top: 10px;
+  }
+  input[type=file] { font-size: 12px; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+  <h1>Cookie Transfer</h1>
+  <div class="site" id="currentSite">Loading current site…</div>
+
+  <button id="exportSite">Export cookies for this site</button>
+  <button id="exportAll">Export ALL cookies (every site)</button>
+
+  <hr>
+
+  <div>Import a previously exported file:</div>
+  <input type="file" id="importFile" accept=".json">
+  <button id="importBtn" class="primary">Import cookies</button>
+
+  <div id="status"></div>
+
+  <div class="warn">
+    Cookies can grant access to your logged-in accounts. Only transfer them between your own browsers/devices, and delete the exported file when you're done.
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
