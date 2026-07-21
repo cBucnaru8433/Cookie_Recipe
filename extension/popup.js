@@ -123,3 +123,9 @@ document.getElementById('refreshBtn').addEventListener('click', async() => {
         setStatus('Refresh failed: ' + e.message, 'error');
     }
 });
+
+document.getElementById('importFile').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    const nameEl = document.getElementById('fileName');
+    nameEl.textContent = file ? file.name : 'No file chosen';
+});
