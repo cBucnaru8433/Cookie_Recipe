@@ -129,3 +129,28 @@ document.getElementById('importFile').addEventListener('change', (e) => {
     const nameEl = document.getElementById('fileName');
     nameEl.textContent = file ? file.name : 'No file chosen';
 });
+
+const themeToggleBtn = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+
+const ICON_DARK = 'icons/dark.png';
+const ICON_LIGHT = 'icons/light.png';
+
+chrome.storage.local.get(['theme'], (result) => {
+    if (result.theme === 'dark') {
+        document.body.classList.add('dark-theme');
+        themeIcon.src = ICON_LIGHT;
+    }
+});
+
+themeToggleBtn.addEventListener('click', () => {
+    const isDark = document.body.classList.toggle('dark-theme');
+
+    if (isDark) {
+        themeIcon.src = ICON_LIGHT;
+        chrome.storage.local.set({ theme: 'dark' });
+    } else {
+        themeIcon.src = ICON_DARK;
+        chrome.storage.local.set({ theme: 'light' });
+    }
+});
