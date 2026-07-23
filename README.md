@@ -42,3 +42,12 @@ A cookie file is effectively a bundle of your login sessions for every site incl
 - Use a direct transfer instead: a USB drive, `scp`, an encrypted archive, or a temporary end-to-end-encrypted note.
 - Delete the exported file as soon as you're done importing.
 - Only ever do this between browsers/devices you personally own and control.
+- THE JSON FILE WITH THE SESSION ISN'T ENCRYPTED SO ANYONE THAT GETS THE JSON FILE IS GETTING YOUR DATA AND YOU CAN'T GET NOTIFIED INSTANTLY! 
+- If you changed a password or an username for an account or anything that can refresh the session, the old ones became useless, but reccomended to be deleted. 
+
+## Upcoming features
+
+Here are some upcoming features:
+- JSON encryption, before exporting, you will be able to encrypt the file with a password. That password is the hash of encrypting and uncrypting the files. Any password has an unique file encryption.
+- More themes, instead of white/dark theme, you're able to choose a custom theme and to switch between them. 
+- More Coming Soon...
