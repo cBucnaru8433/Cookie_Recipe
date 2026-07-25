@@ -32,7 +32,8 @@ Repeat on the second browser/profile you want to import into.
 - **HttpOnly cookies still transfer** — the `cookies` API can read/write them even though page JavaScript can't, which is why this needs to be an extension rather than a bookmarklet or console script.
 - Some sites bind sessions to IP address, device fingerprint, or user-agent, so importing cookies won't always keep you logged in even if the transfer itself worked.
 - Expired or session-only cookies won't be reusable after the source browser closes.
-- Only works between Chromium-based browsers (Chrome, Edge, Brave, Opera). Firefox uses a different cookie store and extension API, so this build won't load there.
+- It support both chromium based browsers (Chrome, Edge, Opera, Brave etc.) and firefox as well and sharing cookies sessions work between them.
+- The firefox .xpi file is still not signed so you have to use firefox Dev version and bypass the restriction. 
 
 ## Security warning
 
@@ -50,4 +51,5 @@ A cookie file is effectively a bundle of your login sessions for every site incl
 Here are some upcoming features:
 - JSON encryption, before exporting, you will be able to encrypt the file with a password. That password is the hash of encrypting and uncrypting the files. Any password has an unique file encryption.
 - More themes, instead of white/dark theme, you're able to choose a custom theme and to switch between them. 
+- Signed .xpi firefox extension.
 - More Coming Soon...
