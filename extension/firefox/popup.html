@@ -10,9 +10,14 @@
 <body>
     <div class="header">
         <h1>Cookie Transfer</h1>
-        <button id="themeToggle" class="theme-btn">
+        <div style="display: flex; gap: 4px;">
+            <button id="openTabBtn" class="theme-btn" title="Open in new tab">
+            <img id="openTabIcon" src="icons/tabs_dark.png" alt="Open Tab">
+        </button>
+            <button id="themeToggle" class="theme-btn" title="Toggle Theme">
             <img id="themeIcon" src="icons/dark.png" alt="Theme">
         </button>
+        </div>
     </div>
 
     <div class="site" id="currentSite">Loading current site…</div>
@@ -25,10 +30,10 @@
     <div>Import a previously exported file:</div>
 
 
-    <div class="file-container">
-        <span id="fileName">No file chosen</span>
-        <label for="importFile" class="custom-file-upload">Choose File</label>
-        <input type="file" id="importFile" accept=".json">
+    <div class="file-container" id="dropZone">
+        <span id="fileName">Drag & drop JSON file here or click</span>
+        <button type="button" id="selectFileBtn">Choose File</button>
+        <input type="file" id="importFile" accept=".json" style="display: none;">
     </div>
 
     <button id="importBtn" class="primary">Import cookies</button>

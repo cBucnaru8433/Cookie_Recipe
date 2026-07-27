@@ -176,3 +176,7 @@ body.dark-theme .warn {
     background-color: #261c00;
     color: #f2cc60;
 }
+
+body.dark-theme #openTabIcon {
+    filter: invert(1);
+}
