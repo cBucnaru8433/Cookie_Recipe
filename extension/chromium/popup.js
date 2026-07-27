@@ -124,10 +124,43 @@ document.getElementById('refreshBtn').addEventListener('click', async() => {
     }
 });
 
-document.getElementById('importFile').addEventListener('change', (e) => {
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('importFile');
+const nameEl = document.getElementById('fileName');
+
+
+fileInput.addEventListener('change', (e) => {
     const file = e.target.files[0];
-    const nameEl = document.getElementById('fileName');
     nameEl.textContent = file ? file.name : 'No file chosen';
+});
+
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+    }, false);
+});
+
+['dragenter', 'dragover'].forEach(eventName => {
+    dropZone.addEventListener(eventName, () => {
+        dropZone.classList.add('dragover');
+    }, false);
+});
+
+['dragleave', 'drop'].forEach(eventName => {
+    dropZone.addEventListener(eventName, () => {
+        dropZone.classList.remove('dragover');
+    }, false);
+});
+
+dropZone.addEventListener('drop', (e) => {
+    const dt = e.dataTransfer;
+    const files = dt.files;
+
+    if (files && files.length > 0) {
+        fileInput.files = files;
+        nameEl.textContent = files[0].name;
+    }
 });
 
 const themeToggleBtn = document.getElementById('themeToggle');
