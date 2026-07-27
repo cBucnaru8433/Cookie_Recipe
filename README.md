@@ -34,7 +34,7 @@ Repeat on the second browser/profile you want to import into.
 - Expired or session-only cookies won't be reusable after the source browser closes.
 - It support both chromium based browsers (Chrome, Edge, Opera, Brave etc.) and firefox as well and sharing cookies sessions work between them.
 - The firefox .xpi file is still not signed so you have to use firefox Dev version and bypass the restriction. 
-
+- for Firefox had to open in another tab because firefox closes the extension automaticaly.
 ## Security warning
 
 A cookie file is effectively a bundle of your login sessions for every site included. Treat it like a password file:
