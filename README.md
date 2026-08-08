@@ -1,6 +1,15 @@
-# Cookie Transfer Extension
+# Cookie Recipe
 
 Exports browser cookies to a JSON file and imports them into another Chrome (or Chromium-based) browser/profile.
+
+# SECURITY WARNING!
+## A cookie file is effectively a bundle of your login sessions for every site included. Treat it like a password file:
+
+- Don't email it, upload it to cloud storage, or send it over chat apps as plain text.
+- Delete the exported file as soon as you're done importing.
+- Only ever do this between browsers/devices you personally own and control.
+- THE JSON FILE WITH THE SESSION ISN'T ENCRYPTED SO ANYONE THAT GETS THE JSON FILE IS GETTING YOUR DATA AND YOU CAN'T GET NOTIFIED INSTANTLY! 
+- If you changed a password or an username for an account or anything that can refresh the session, the old ones became useless, but reccomended to be deleted. 
 
 ## Install (unpacked, both browsers)
 
@@ -35,16 +44,6 @@ Repeat on the second browser/profile you want to import into.
 - It support both chromium based browsers (Chrome, Edge, Opera, Brave etc.) and firefox as well and sharing cookies sessions work between them.
 - The firefox .xpi file is still not signed so you have to use firefox Dev version and bypass the restriction. 
 - for Firefox had to open in another tab because firefox closes the extension automaticaly.
-## Security warning
-
-A cookie file is effectively a bundle of your login sessions for every site included. Treat it like a password file:
-
-- Don't email it, upload it to cloud storage, or send it over chat apps as plain text.
-- Use a direct transfer instead: a USB drive, `scp`, an encrypted archive, or a temporary end-to-end-encrypted note.
-- Delete the exported file as soon as you're done importing.
-- Only ever do this between browsers/devices you personally own and control.
-- THE JSON FILE WITH THE SESSION ISN'T ENCRYPTED SO ANYONE THAT GETS THE JSON FILE IS GETTING YOUR DATA AND YOU CAN'T GET NOTIFIED INSTANTLY! 
-- If you changed a password or an username for an account or anything that can refresh the session, the old ones became useless, but reccomended to be deleted. 
 
 ## Upcoming features
 
