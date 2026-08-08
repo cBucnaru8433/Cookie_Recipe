@@ -20,7 +20,7 @@
     },
     "browser_specific_settings": {
         "gecko": {
-            "id": "cookie-transfer-addon@exemplu.com",
+            "id": "cookie-transfer@constantin.com",
             "strict_min_version": "109.0"
         }
     }
