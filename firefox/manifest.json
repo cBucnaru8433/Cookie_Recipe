@@ -1,27 +1,39 @@
 {
     "manifest_version": 3,
-    "name": "Cookie Recipe",
+    "name": "Cookie Transfer",
     "version": "1.2.0",
+    "description": "Export cookies to a JSON file and import them into another browser/profile.",
     "icons": {
         "16": "favicon.png",
         "48": "favicon.png",
         "128": "favicon.png"
     },
-    "description": "Export cookies to a JSON file and import them into another browser/profile.",
-    "permissions": ["cookies", "activeTab", "tabs", "storage", "downloads"],
-    "host_permissions": ["<all_urls>"],
+    "permissions": [
+        "cookies",
+        "activeTab",
+        "tabs",
+        "storage",
+        "downloads"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ],
     "action": {
         "default_popup": "popup.html",
         "default_icon": {
             "16": "favicon.png",
-            "48": "favicon.png",
-            "128": "favicon.png"
+            "48": "favicon.png"
         }
     },
     "browser_specific_settings": {
         "gecko": {
-            "id": "cookie-transfer@constantin.com",
-            "strict_min_version": "109.0"
+            "id": "cookie-transfer@constantin.local",
+            "strict_min_version": "109.0",
+            "data_collection_permissions": {
+                "required": [
+                    "none"
+                ]
+            }
         }
     }
 }
