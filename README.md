@@ -51,9 +51,8 @@ Repeat on the second browser/profile you want to import into.
 
 ## Notes and limits
 
-- **HttpOnly cookies still transfer** — the `cookies` API can read/write them even though page JavaScript can't, which is why this needs to be an extension rather than a bookmarklet or console script.
+- **Http Only cookies still transfer** — the `cookies` API can read/write them even though page JavaScript can't, which is why this needs to be an extension rather than a bookmarklet or console script.
 - Some sites bind sessions to IP address, device fingerprint, or user-agent, so importing cookies won't always keep you logged in even if the transfer itself worked.
 - Expired or session-only cookies won't be reusable after the source browser closes.
 - It support both chromium based browsers (Chrome, Edge, Opera, Brave etc.) and firefox as well and sharing cookies sessions work between them BUT It doesn't guarantee a successfully Chromium - Firefox Share. 
-- If you take 
 - For Firefox had to open in another tab because firefox closes the extension automaticaly.
