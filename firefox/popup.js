@@ -9,19 +9,31 @@ function setStatus(msg, kind) {
 }
 
 function downloadJSON(filename, data) {
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    browser.downloads.download ?
-        browser.downloads.download({ url, filename, saveAs: true }) :
-        (() => {
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = filename;
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-        })();
-    setTimeout(() => URL.revokeObjectURL(url), 10000);
+    const jsonString = JSON.stringify(data, null, 2);
+    const base64Data = btoa(unescape(encodeURIComponent(jsonString)));
+    const dataUrl = 'data:application/json;base64,' + base64Data;
+
+    if (browser.downloads && browser.downloads.download) {
+        browser.downloads.download({ 
+            url: dataUrl, 
+            filename: filename, 
+            saveAs: true 
+        }).catch(err => {
+            console.error("Download API failed:", err);
+            triggerLegacyDownload(dataUrl, filename);
+        });
+    } else {
+        triggerLegacyDownload(dataUrl, filename);
+    }
+}
+
+function triggerLegacyDownload(url, filename) {
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
 }
 
 let currentUrl = null;
