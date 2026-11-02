@@ -8,7 +8,7 @@ Exports browser cookies to a JSON file and imports them into another Chrome (or 
 - Don't email it, upload it to cloud storage, or send it over chat apps as plain text.
 - Delete the exported file as soon as you're done importing.
 - Only ever do this between browsers/devices you personally own and control.
-- #### HE JSON FILE WITH THE SESSION ISN'T ENCRYPTED SO ANYONE THAT GETS THE JSON FILE IS GETTING YOUR DATA AND YOU CAN'T GET NOTIFIED INSTANTLY! 
+- #### THE JSON FILE WITH THE SESSION ISN'T ENCRYPTED SO ANYONE THAT GETS THE JSON FILE IS GETTING YOUR DATA AND YOU CAN'T GET NOTIFIED INSTANTLY! 
 - If you changed a password or an username for an account or anything that can refresh the session, the old ones became useless, but reccomended to be deleted. 
 - This EXtension is MIT License protected.
 - #### I AM NOT RESPONSIVE TO ACCOUNT LOSS OR DATA LEAKS & COMPROMISSES! DON'T USE FOR VERY IMPORTANT ACCOUNT LIKE GOOGLE, YAHOO, ICLOUD OR CHREDIT/BANK ACCOUNT!!!
