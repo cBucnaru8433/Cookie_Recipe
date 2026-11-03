@@ -77,7 +77,6 @@ document.getElementById('importBtn').addEventListener('click', async() => {
         let failed = 0;
 
         for (const c of cookies) {
-            // Rebuild the URL chrome.cookies.set requires
             const domain = c.domain.startsWith('.') ? c.domain.slice(1) : c.domain;
             const protocol = c.secure ? 'https://' : 'http://';
             const url = protocol + domain + (c.path || '/');
@@ -169,6 +168,9 @@ const themeIcon = document.getElementById('themeIcon');
 const ICON_DARK = 'icons/dark.png';
 const ICON_LIGHT = 'icons/light.png';
 
+const GIT_LIGHT = 'icons/white_git.png';
+const GIT_DARK = 'icons/black_git.png';
+
 chrome.storage.local.get(['theme'], (result) => {
     if (result.theme === 'dark') {
         document.body.classList.add('dark-theme');
@@ -181,9 +183,17 @@ themeToggleBtn.addEventListener('click', () => {
 
     if (isDark) {
         themeIcon.src = ICON_LIGHT;
+        githubLink.querySelector('img').src = GIT_LIGHT;
         chrome.storage.local.set({ theme: 'dark' });
     } else {
         themeIcon.src = ICON_DARK;
+        githubLink.querySelector('img').src = GIT_DARK;
         chrome.storage.local.set({ theme: 'light' });
     }
+});
+
+const githubLink = document.getElementById('githubLink');
+githubLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    chrome.tabs.create({ url: 'https://github.com/cBucnaru8433/Cookie_Recipe' });
 });
