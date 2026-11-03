@@ -73,7 +73,6 @@ hr {
 }
 
 
-/* Stilurile pentru alinierea fișierului pe centru */
 
 .file-container {
     display: flex;
@@ -128,6 +127,8 @@ input[type="file"] {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: auto;
+    margin-right: 15px;
 }
 
 .theme-btn:hover {
@@ -196,4 +197,25 @@ body.dark-theme .file-container {
 body.dark-theme .file-container.dragover {
     background: #1c2128;
     border-color: #58a6ff;
+}
+
+.github-btn {
+    width: 10px;
+    height: 10px;
+    padding: 4px;
+    margin-bottom: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.github-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.github-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
 }
