@@ -99,13 +99,19 @@ document.getElementById('refreshBtn').addEventListener('click', async() => {
 
 const themeToggleBtn = document.getElementById('themeToggle');
 const themeIcon = document.getElementById('themeIcon');
+const githubIcon = document.getElementById('githubIcon');
+
 const ICON_DARK = 'icons/dark.png';
 const ICON_LIGHT = 'icons/light.png';
+
+const LIGHT_GITHUB = 'icons/white_git.png';
+const DARK_GITHUB = 'icons/black_git.png';
 
 browser.storage.local.get(['theme']).then((result) => {
     if (result && result.theme === 'dark') {
         document.body.classList.add('dark-theme');
         if (themeIcon) themeIcon.src = ICON_LIGHT;
+        if (githubIcon) githubIcon.src = LIGHT_GITHUB;
     }
 });
 
@@ -114,10 +120,19 @@ if (themeToggleBtn) {
         const isDark = document.body.classList.toggle('dark-theme');
         if (isDark) {
             if (themeIcon) themeIcon.src = ICON_LIGHT;
+            if (githubIcon) githubIcon.src = LIGHT_GITHUB;
             await browser.storage.local.set({ theme: 'dark' });
         } else {
             if (themeIcon) themeIcon.src = ICON_DARK;
+            if (githubIcon) githubIcon.src = DARK_GITHUB;
             await browser.storage.local.set({ theme: 'light' });
         }
+    });
+}
+
+const githubBtn = document.getElementById('githubBtn');
+if (githubBtn) {
+    githubBtn.addEventListener('click', () => {
+        browser.tabs.create({ url: 'https://github.com/cBucnaru8433/Cookie_Recipe' });
     });
 }
