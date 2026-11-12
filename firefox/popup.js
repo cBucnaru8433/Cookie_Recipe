@@ -9,22 +9,18 @@ function setStatus(msg, kind) {
 }
 
 function downloadJSON(filename, data) {
-    const jsonString = JSON.stringify(data, null, 2);
-    const base64Data = btoa(unescape(encodeURIComponent(jsonString)));
-    const dataUrl = 'data:application/json;base64,' + base64Data;
+    const jsonSring = JSON.stringify(data, null, 2);
+    const blob = new Blob([jsonSring], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
 
-    if (browser.downloads && browser.downloads.download) {
-        browser.downloads.download({ 
-            url: dataUrl, 
-            filename: filename, 
-            saveAs: true 
-        }).catch(err => {
-            console.error("Download API failed:", err);
-            triggerLegacyDownload(dataUrl, filename);
-        });
-    } else {
-        triggerLegacyDownload(dataUrl, filename);
-    }
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
 function triggerLegacyDownload(url, filename) {
