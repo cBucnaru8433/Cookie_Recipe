@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You!</title>
+
+  <link rel="stylesheet" href="thanks.css">
+  <link rel="icon" href="../icons/icon_borderless.png" type="image/png">
+
+</head>
+
+<body>
+
+  <h1 class="h1">Thank you for downloading Cookie Recipe on Firefox!</h1>
+  <img src="../icons/icon_borderless.png" alt="icon_borderless" class="icon">
+  <h2 class="h2">Now You can import and export web sessions between different browsers and even devices!</h2>
+  <warn class="warn">By using this extension, you assume all the risks if you export sessions from web pages, Please use it carefully only on throwaway accounts, not for personal accounts!!!</warn>
+
+  <button class="githubbtn" id="githubBtn">
+    <img id="githubIcon" src="../icons/black_git.png" alt="GitHub">
+    <span>View on GitHub</span>
+  </button>
+
+  <script>
+    const githubBtn = document.getElementById('githubBtn');
+
+    githubBtn.addEventListener('click', function() {
+        window.location.href = "https://github.com/cBucnaru8433/Cookie_Recipe";
+    });
+  </script>
+
+</body>
+</html>
